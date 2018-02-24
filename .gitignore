@@ -25,3 +25,8 @@ coverage/
 
 # Bower
 bower_components/
+
+
+dist
+docs
+src/templates/diff2html-templates.js
