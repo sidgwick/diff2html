@@ -75,7 +75,8 @@
       diffParser: diffParser,
       blockHeader: utils.escape(block.header),
       lineClass: 'd2h-code-linenumber',
-      contentClass: 'd2h-code-line'
+      contentClass: 'd2h-code-line',
+      displaySelector: true,
     });
   };
 
@@ -208,7 +209,9 @@
         contentClass: 'd2h-code-line',
         prefix: prefix,
         content: lineWithoutPrefix,
-        lineNumber: lineNumberTemplate
+        lineNumber: lineNumberTemplate,
+        selectorNumber: oldNumber + "," + newNumber,
+        displaySelector: true,
       });
   };
 

@@ -97,6 +97,7 @@
   width: 50%;
   margin-right: -4px;
   margin-bottom: -8px;
+  /* border-right: 1px solid #ddd; */
 }
 
 .d2h-code-line {
@@ -174,9 +175,9 @@
   padding-right: 2px;
   background-color: #fff;
   color: rgba(0, 0, 0, 0.3);
-  text-align: right;
   border: solid #eeeeee;
   border-width: 0 1px 0 1px;
+  text-align: right;
   cursor: pointer;
 }
 
@@ -368,4 +369,12 @@
 .selecting-right td.d2h-code-side-linenumber::selection,
 .selecting-right td.d2h-code-side-linenumber *::selection {
   background: transparent;
+}
+
+.line-check-box {
+    width: 20px;
+}
+
+.line-check-box input {
+    margin: 0 3px;
 }

@@ -1,4 +1,8 @@
 <tr>
+    {{#displaySelector}}
+    <td class="line-check-box"></td>
+    {{/displaySelector}}
+
     <td class="{{lineClass}} {{diffParser.LINE_TYPE.INFO}}"></td>
     <td class="{{diffParser.LINE_TYPE.INFO}}">
         <div class="{{contentClass}} {{diffParser.LINE_TYPE.INFO}}">{{{blockHeader}}}</div>

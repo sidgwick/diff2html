@@ -73,7 +73,8 @@
       diffParser: diffParser,
       blockHeader: utils.escape(blockHeader),
       lineClass: 'd2h-code-side-linenumber',
-      contentClass: 'd2h-code-side-line'
+      contentClass: 'd2h-code-side-line',
+      displaySelector: false,
     });
   };
 
@@ -238,7 +239,9 @@
         contentClass: 'd2h-code-side-line',
         prefix: prefix,
         content: lineWithoutPrefix,
-        lineNumber: number
+        lineNumber: number,
+        selectorNumber: null,
+        displaySelector: false,
       });
   };
 

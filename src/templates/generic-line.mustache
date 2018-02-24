@@ -1,4 +1,10 @@
 <tr>
+    {{#displaySelector}}
+      <td class="line-check-box">
+        <input type="checkbox" name="patchline[]" value="{{selectorNumber}}" checked />
+      </td>
+    {{/displaySelector}}
+
     <td class="{{lineClass}} {{type}}">
       {{{lineNumber}}}
     </td>
