@@ -378,3 +378,7 @@
 .line-check-box input {
     margin: 0 3px;
 }
+
+.line-check-box input.d2h-cntx-checkbox {
+    display: none;
+}
