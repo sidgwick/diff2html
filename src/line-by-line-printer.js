@@ -33,6 +33,7 @@
 
     return fileDiffTemplate.render({
       file: file,
+      fileNewName: file.newName.replace(/\/|\./g, '-'),
       fileHtmlId: printerUtils.getHtmlId(file),
       diffs: diffs,
       filePath: filePathTemplate.render({
@@ -71,12 +72,14 @@
   });
 
   LineByLinePrinter.prototype.makeColumnLineNumberHtml = function(block) {
+    var that = this;
+
     return hoganUtils.render(genericTemplatesPath, 'column-line-number', {
       diffParser: diffParser,
       blockHeader: utils.escape(block.header),
       lineClass: 'd2h-code-linenumber',
       contentClass: 'd2h-code-line',
-      displaySelector: true,
+      displaySelector: that.config.displaySelector,
     });
   };
 
@@ -195,6 +198,7 @@
 
     var lineWithoutPrefix = content;
     var prefix = possiblePrefix;
+    var that = this;
 
     if (!prefix) {
       var lineWithPrefix = printerUtils.separatePrefix(isCombined, content);
@@ -211,7 +215,7 @@
         content: lineWithoutPrefix,
         lineNumber: lineNumberTemplate,
         selectorNumber: oldNumber + "," + newNumber,
-        displaySelector: true,
+        displaySelector: that.config.displaySelector,
       });
   };
 

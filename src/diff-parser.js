@@ -79,6 +79,7 @@
 
       currentFile = {};
       currentFile.blocks = [];
+      currentFile.patch_meta = {};
       currentFile.deletedLines = 0;
       currentFile.addedLines = 0;
     }
@@ -281,6 +282,7 @@
         if (currentFile && !currentFile.oldName &&
           utils.startsWith(line, '--- ') && (values = getSrcFilename(line, config))) {
           currentFile.oldName = values;
+          currentFile.patch_meta['old_file_header_line'] = line;
           currentFile.language = getExtension(currentFile.oldName, currentFile.language);
           return;
         }
@@ -292,6 +294,7 @@
         if (currentFile && !currentFile.newName &&
           utils.startsWith(line, '+++ ') && (values = getDstFilename(line, config))) {
           currentFile.newName = values;
+          currentFile.patch_meta['new_file_header_line'] = line;
           currentFile.language = getExtension(currentFile.newName, currentFile.language);
           return;
         }
